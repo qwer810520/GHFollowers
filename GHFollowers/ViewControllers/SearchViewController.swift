@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  SearchViewController.swift
 //  GHFollowers
 //
 //  Created by Min on 2020/2/5.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class SearchViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()

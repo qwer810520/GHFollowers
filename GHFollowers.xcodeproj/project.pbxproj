@@ -9,10 +9,11 @@
 /* Begin PBXBuildFile section */
 		39CBAAC923EAF46200C4A1D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CBAAC823EAF46200C4A1D0 /* AppDelegate.swift */; };
 		39CBAACB23EAF46200C4A1D0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CBAACA23EAF46200C4A1D0 /* SceneDelegate.swift */; };
-		39CBAACD23EAF46200C4A1D0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CBAACC23EAF46200C4A1D0 /* ViewController.swift */; };
 		39CBAAD223EAF46500C4A1D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39CBAAD123EAF46500C4A1D0 /* Assets.xcassets */; };
 		39CBAAD523EAF46500C4A1D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39CBAAD323EAF46500C4A1D0 /* LaunchScreen.storyboard */; };
 		39CBAAE023EAF46500C4A1D0 /* GHFollowersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CBAADF23EAF46500C4A1D0 /* GHFollowersTests.swift */; };
+		39CBAAEC23EB193000C4A1D0 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CBAAEB23EB193000C4A1D0 /* SearchViewController.swift */; };
+		39CBAAEE23EB197300C4A1D0 /* FavoritesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CBAAED23EB197300C4A1D0 /* FavoritesListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +30,14 @@
 		39CBAAC523EAF46200C4A1D0 /* GHFollowers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GHFollowers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39CBAAC823EAF46200C4A1D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		39CBAACA23EAF46200C4A1D0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		39CBAACC23EAF46200C4A1D0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		39CBAAD123EAF46500C4A1D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		39CBAAD423EAF46500C4A1D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		39CBAAD623EAF46500C4A1D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		39CBAADB23EAF46500C4A1D0 /* GHFollowersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GHFollowersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		39CBAADF23EAF46500C4A1D0 /* GHFollowersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHFollowersTests.swift; sourceTree = "<group>"; };
 		39CBAAE123EAF46500C4A1D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		39CBAAEB23EB193000C4A1D0 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		39CBAAED23EB197300C4A1D0 /* FavoritesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,9 +79,9 @@
 		39CBAAC723EAF46200C4A1D0 /* GHFollowers */ = {
 			isa = PBXGroup;
 			children = (
+				39CBAAEA23EB191700C4A1D0 /* ViewControllers */,
 				39CBAAC823EAF46200C4A1D0 /* AppDelegate.swift */,
 				39CBAACA23EAF46200C4A1D0 /* SceneDelegate.swift */,
-				39CBAACC23EAF46200C4A1D0 /* ViewController.swift */,
 				39CBAAD123EAF46500C4A1D0 /* Assets.xcassets */,
 				39CBAAD323EAF46500C4A1D0 /* LaunchScreen.storyboard */,
 				39CBAAD623EAF46500C4A1D0 /* Info.plist */,
@@ -94,6 +96,15 @@
 				39CBAAE123EAF46500C4A1D0 /* Info.plist */,
 			);
 			path = GHFollowersTests;
+			sourceTree = "<group>";
+		};
+		39CBAAEA23EB191700C4A1D0 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				39CBAAEB23EB193000C4A1D0 /* SearchViewController.swift */,
+				39CBAAED23EB197300C4A1D0 /* FavoritesListViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,8 +207,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39CBAACD23EAF46200C4A1D0 /* ViewController.swift in Sources */,
+				39CBAAEC23EB193000C4A1D0 /* SearchViewController.swift in Sources */,
 				39CBAAC923EAF46200C4A1D0 /* AppDelegate.swift in Sources */,
+				39CBAAEE23EB197300C4A1D0 /* FavoritesListViewController.swift in Sources */,
 				39CBAACB23EAF46200C4A1D0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
