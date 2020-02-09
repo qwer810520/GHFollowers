@@ -8,11 +8,15 @@
 
 import UIKit
 
+protocol FollowerListViewControllerDelegate: class {
+  func didRequestFollowers(for username: String)
+}
+
 class FollowerListViewController: UIViewController {
 
   enum Section { case main }
 
-  var userName: String?
+  var username: String?
   var followers = [Follower]()
   var filteredFollowers = [Follower]()
   var page = 1
@@ -27,7 +31,7 @@ class FollowerListViewController: UIViewController {
     super.viewDidLoad()
     configureViewController()
     configureCollectionView()
-    getFollowers(username: userName ?? "", page: page)
+    getFollowers(username: username ?? "", page: page)
     configureDataSource()
     configureSearchController()
   }
@@ -113,7 +117,7 @@ extension FollowerListViewController: UICollectionViewDelegate {
     if offsetY > contentHeight - height {
       guard hasMoreFollowers else { return }
       page += 1
-      getFollowers(username: userName ?? "", page: page)
+      getFollowers(username: username ?? "", page: page)
     }
   }
 
@@ -122,6 +126,7 @@ extension FollowerListViewController: UICollectionViewDelegate {
     let follower = activeArray[indexPath.item]
 
     let userInfoVC = UserInfoViewController()
+    userInfoVC.delegate = self
     userInfoVC.username = follower.login
     let naviController = UINavigationController(rootViewController: userInfoVC)
     present(naviController, animated: true)
@@ -145,5 +150,18 @@ extension FollowerListViewController: UISearchBarDelegate {
   func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
     isSearching = false
     updateData(on: followers)
+  }
+}
+
+  // MARK: - FollowerListViewControllerDelegate
+
+extension FollowerListViewController: FollowerListViewControllerDelegate {
+  func didRequestFollowers(for username: String) {
+    self.username = username
+    followers.removeAll()
+    filteredFollowers.removeAll()
+    page = 1
+    collectionView.setContentOffset(.zero, animated: true)
+    getFollowers(username: username, page: page)
   }
 }
