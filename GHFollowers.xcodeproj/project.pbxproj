@@ -11,6 +11,8 @@
 		39258AB023F01ED9007F1568 /* GFItemInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39258AAF23F01ED9007F1568 /* GFItemInfoView.swift */; };
 		3962252523F0300F00A75FED /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3962252423F0300F00A75FED /* Date+Extension.swift */; };
 		3962252723F0302800A75FED /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3962252623F0302800A75FED /* String+Extension.swift */; };
+		3962252923F052DE00A75FED /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3962252823F052DE00A75FED /* PersistenceManager.swift */; };
+		3962252B23F05F4F00A75FED /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3962252A23F05F4F00A75FED /* FavoriteCell.swift */; };
 		39A3148523EC589B0006C700 /* FollowerListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A3148423EC589B0006C700 /* FollowerListViewController.swift */; };
 		39A3148723EC5F390006C700 /* GFTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A3148623EC5F390006C700 /* GFTitleLabel.swift */; };
 		39A3148923EC611E0006C700 /* GFBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A3148823EC611E0006C700 /* GFBodyLabel.swift */; };
@@ -56,6 +58,8 @@
 		39258AAF23F01ED9007F1568 /* GFItemInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFItemInfoView.swift; sourceTree = "<group>"; };
 		3962252423F0300F00A75FED /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		3962252623F0302800A75FED /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		3962252823F052DE00A75FED /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
+		3962252A23F05F4F00A75FED /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
 		39A3148423EC589B0006C700 /* FollowerListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerListViewController.swift; sourceTree = "<group>"; };
 		39A3148623EC5F390006C700 /* GFTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFTitleLabel.swift; sourceTree = "<group>"; };
 		39A3148823EC611E0006C700 /* GFBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFBodyLabel.swift; sourceTree = "<group>"; };
@@ -232,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				39E2994323EE91F2009422C5 /* NetworkManager.swift */,
+				3962252823F052DE00A75FED /* PersistenceManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -250,6 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				39E2994923EECF55009422C5 /* FollowerCell.swift */,
+				3962252A23F05F4F00A75FED /* FavoriteCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -368,6 +374,7 @@
 				39258AB023F01ED9007F1568 /* GFItemInfoView.swift in Sources */,
 				39E2994A23EECF55009422C5 /* FollowerCell.swift in Sources */,
 				39C8C57423F028DA00621B76 /* GFRepoItemViewController.swift in Sources */,
+				3962252B23F05F4F00A75FED /* FavoriteCell.swift in Sources */,
 				39E2995423EFE95A009422C5 /* GFUserInfoHeaderViewController.swift in Sources */,
 				39E2994723EE9D59009422C5 /* GFError.swift in Sources */,
 				39A3148923EC611E0006C700 /* GFBodyLabel.swift in Sources */,
@@ -375,6 +382,7 @@
 				39A3148723EC5F390006C700 /* GFTitleLabel.swift in Sources */,
 				39E2995623EFEA1D009422C5 /* GFSecondaryTitleLabel.swift in Sources */,
 				39E2995023EF1092009422C5 /* GFEmptyStateView.swift in Sources */,
+				3962252923F052DE00A75FED /* PersistenceManager.swift in Sources */,
 				39E2994423EE91F2009422C5 /* NetworkManager.swift in Sources */,
 				39CBAAC923EAF46200C4A1D0 /* AppDelegate.swift in Sources */,
 				39C8C57223F024DD00621B76 /* GFItemInfoViewController.swift in Sources */,

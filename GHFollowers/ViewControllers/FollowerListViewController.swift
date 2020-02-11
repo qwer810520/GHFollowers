@@ -43,7 +43,10 @@ class FollowerListViewController: UIViewController {
 
   func configureViewController() {
     view.backgroundColor = .systemBackground
-       navigationController?.navigationBar.prefersLargeTitles = true
+    navigationController?.navigationBar.prefersLargeTitles = true
+
+    let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
+    navigationItem.rightBarButtonItem = addButton
   }
 
   func configureCollectionView() {
@@ -104,6 +107,28 @@ class FollowerListViewController: UIViewController {
       self.dataSourece.apply(snapshot, animatingDifferences: true)
     }
   }
+
+  @objc func addButtonTapped() {
+    showLoadingView()
+    NetworkManager.shared.getUserInfo(for: username ?? "") { [weak self] result in
+      guard let self = self else { return }
+      self.dismissLoadingView()
+      switch result {
+        case .success(let user):
+          let favorite = Follower(login: user.login, avatarUrl: user.avatarUrl)
+          PersistenceManager.updateWith(favorite: favorite, actionType: .add) { error in
+            guard let error = error else {
+              self.presentGFAlertOnMainThread(title: "Success!", message: "you have successFully favorited this user 🎉", buttonTitle: "Hooray!")
+              return
+            }
+
+            self.presentGFAlertOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "OK")
+          }
+        case .failure(let error):
+          self.presentGFAlertOnMainThread(title: "Something want wrong", message: error.rawValue, buttonTitle: "OK")
+      }
+    }
+  }
 }
 
   // MARK: - UICollectionViewDelegate
@@ -158,6 +183,7 @@ extension FollowerListViewController: UISearchBarDelegate {
 extension FollowerListViewController: FollowerListViewControllerDelegate {
   func didRequestFollowers(for username: String) {
     self.username = username
+    title = username
     followers.removeAll()
     filteredFollowers.removeAll()
     page = 1
