@@ -15,11 +15,10 @@ class GFButton: UIButton {
     configure()
   }
 
-  init(backgroundColor: UIColor, title: String) {
-    super.init(frame: .zero)
+  convenience init(backgroundColor: UIColor, title: String) {
+    self.init(frame: .zero)
     self.backgroundColor = backgroundColor
     setTitle(title, for: .normal)
-    configure()
   }
 
   required init?(coder: NSCoder) {
@@ -35,8 +34,8 @@ class GFButton: UIButton {
 
   private func configure() {
     layer.cornerRadius = 10
-    setTitleColor(.white, for: .normal)
     titleLabel?.font = UIFont.preferredFont(forTextStyle: .headline)
+    setTitleColor(.white, for: .normal)
     translatesAutoresizingMaskIntoConstraints = false
   }
 }

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+/*
 extension String {
 
   func convertToDate() -> Date? {
@@ -23,3 +23,4 @@ extension String {
     return date.convertToMonthYearFormat()
   }
 }
+ */

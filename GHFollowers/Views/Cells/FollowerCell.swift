@@ -26,14 +26,13 @@ class FollowerCell: UICollectionViewCell {
 
   func set(follower: Follower) {
     usernameLabel.text = follower.login
-    avatarImageView.downloadImage(from: follower.avatarUrl)
+    avatarImageView.downloadImage(fromURL: follower.avatarUrl)
   }
 
   // MARK: - Private Methods
 
   private func configure() {
-    contentView.addSubview(avatarImageView)
-    contentView.addSubview(usernameLabel)
+    contentView.addSubviews(avatarImageView, usernameLabel)
 
     let padding: CGFloat = 8
 

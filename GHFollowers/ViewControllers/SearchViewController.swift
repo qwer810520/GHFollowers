@@ -13,7 +13,6 @@ class SearchViewController: UIViewController {
   let logoimageView = UIImageView()
   let userNameTextField = GFTextField()
   let callToActionButton = GFButton(backgroundColor: .systemGreen, title: "Get Followers")
-  var logoImageViewTopConstraint: NSLayoutConstraint?
 
   var isUsernameEntered: Bool {
     return !(userNameTextField.text?.isEmpty ?? true)
@@ -22,6 +21,7 @@ class SearchViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     view.backgroundColor = .systemBackground
+    view.addSubviews(logoimageView, userNameTextField, callToActionButton)
     configureLogoImageView()
     configureTextField()
     configureCallToActionButton()
@@ -40,16 +40,13 @@ class SearchViewController: UIViewController {
   }
 
   func configureLogoImageView() {
-    view.addSubview(logoimageView)
     logoimageView.translatesAutoresizingMaskIntoConstraints = false
     logoimageView.image = Images.ghLogo
 
     let topConstraintConstant: CGFloat = DeviceTypes.isiPhoneSE || DeviceTypes.isiPhone8Zoomed ? 20 : 80
 
-    logoImageViewTopConstraint = logoimageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: topConstraintConstant)
-    logoImageViewTopConstraint?.isActive = true
-
     NSLayoutConstraint.activate([
+      logoimageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: topConstraintConstant),
       logoimageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
       logoimageView.heightAnchor.constraint(equalToConstant: 200),
       logoimageView.widthAnchor.constraint(equalToConstant: 200)
@@ -57,8 +54,6 @@ class SearchViewController: UIViewController {
   }
 
   func configureTextField() {
-    view.addSubview(userNameTextField)
-
     userNameTextField.delegate = self
 
     NSLayoutConstraint.activate([
@@ -70,8 +65,6 @@ class SearchViewController: UIViewController {
   }
 
   func configureCallToActionButton() {
-    view.addSubview(callToActionButton)
-
     callToActionButton.addTarget(self, action: #selector(pushFollowerListVC), for: .touchUpInside)
 
     NSLayoutConstraint.activate([

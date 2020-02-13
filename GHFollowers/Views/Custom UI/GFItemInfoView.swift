@@ -12,8 +12,6 @@ enum ItemInfoType {
   case repos, gists, followers, following
 }
 
-
-
 class GFItemInfoView: UIView {
 
   let symbolImageView = UIImageView()
@@ -32,9 +30,7 @@ class GFItemInfoView: UIView {
   // MARK: - Private Methods
 
   private func configure() {
-    addSubview(symbolImageView)
-    addSubview(titleLabel)
-    addSubview(countLabel)
+    addSubviews(symbolImageView, titleLabel, countLabel)
 
     symbolImageView.translatesAutoresizingMaskIntoConstraints = false
     symbolImageView.contentMode = .scaleAspectFill
@@ -61,16 +57,16 @@ class GFItemInfoView: UIView {
   func set(itemInfoType: ItemInfoType, withCount count: Int) {
     switch itemInfoType {
       case .repos:
-        symbolImageView.image = UIImage(systemName: SFSumbols.repos)
+        symbolImageView.image = SFSumbols.repos
         titleLabel.text = "Public Repos"
       case .gists:
-        symbolImageView.image = UIImage(systemName: SFSumbols.gists)
+        symbolImageView.image = SFSumbols.gists
         titleLabel.text = "Public Gists"
       case .followers:
-        symbolImageView.image = UIImage(systemName: SFSumbols.followers)
+        symbolImageView.image = SFSumbols.followers
         titleLabel.text = "Followers"
       case .following:
-        symbolImageView.image = UIImage(systemName: SFSumbols.following)
+        symbolImageView.image = SFSumbols.following
         titleLabel.text = "Following"
     }
     
