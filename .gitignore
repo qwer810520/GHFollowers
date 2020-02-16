@@ -71,3 +71,6 @@ vendor
 
 # Code Injection
 iOSInjectionProject/
+codesigndoc_exports/2993d58b-dac9-4dc2-9bfb-2bae03377e65.matchAppStorecom.min.GHFollowers.mobileprovision
+codesigndoc_exports/Identities.p12
+codesigndoc_exports/xcodebuild-output.log
